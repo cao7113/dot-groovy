@@ -31,10 +31,13 @@ function gro(){
   esac
 }
 
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 return 0
 
 brew install groovy
-ussing docker
+brew info groovy
+using docker
 https://hub.docker.com/_/groovy/
 sdkman formerly as GVM, like rbenv, rvm
 https://sdkman.io/
@@ -48,3 +51,8 @@ groovy SomeScript # run a specific Groovy script type:
 groovysh # create an interactive groovy shell where you can type Groovy statements. 
 a window occur in terminal
 groovyConsole # run the Swing interactive console type (GUI way)
+
+## toolbox
+
+brew install gradle
+brew install gradle-completion
