@@ -1,0 +1,50 @@
+#! /usr/bin/env bash 
+[ -z $BOOTER_GRO_RC ] || { echo Warn: has sourced $BOOTER_GRO_RC!;  return 1; } 
+BOOTER_GRO_RC=$(evar=${BASH_SOURCE[0]} ruby -e "puts File.realpath(ENV['evar'])")
+BOOTER_GRO_HOME=$(dirname $BOOTER_GRO_RC)
+[ -d "$BOOTER_GRO_HOME/bin" ] && PATH=$PATH:$BOOTER_GRO_HOME/bin
+
+function gro(){
+  tp=${1:-cd}
+  case "$tp" in
+    home|root)
+      echo $BOOTER_GRO_HOME
+      ;;
+    cd)
+      cd "$BOOTER_GRO_HOME"
+      ;;
+    rc)
+      vi "$BOOTER_GRO_RC"
+      ;;
+    help|h)
+      type $FUNCNAME 
+      ;;
+    sh)
+      # :exit, :help
+      groovysh
+      ;;
+    *)
+      cmd="groovy $@"
+      echo ==run: $cmd
+      $cmd
+      ;;
+  esac
+}
+
+return 0
+
+brew install groovy
+ussing docker
+https://hub.docker.com/_/groovy/
+sdkman formerly as GVM, like rbenv, rvm
+https://sdkman.io/
+
+groovy running on JVM
+
+groovy --help
+groovy --version
+
+groovy SomeScript # run a specific Groovy script type:
+groovysh # create an interactive groovy shell where you can type Groovy statements. 
+a window occur in terminal
+groovyConsole # run the Swing interactive console type (GUI way)
