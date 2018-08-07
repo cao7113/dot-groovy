@@ -13,8 +13,9 @@ result = ERB.render(tmpl, binding)
 rpath.write(result)
 rpath.chmod(0755)
 puts "file: #{rpath} generated!"
+exec "vi #{rpath.to_s}"
 
 __END__
 #!/usr/bin/env groovy
 
-print 'hi groovy'
+println 'hi groovy'
