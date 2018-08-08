@@ -1,4 +1,4 @@
-package dot.groovy
+package dot
 import java.util.Date
 
 class DotHi {

@@ -1,11 +1,12 @@
 task :build do
-  #exec "groovyc -d build src/**/*.groovy"
-  #exec "groovyc --encoding utf-8 -d build src/dot/groovy/base.groovy"
-  exec './gradlew build'
+  #exec "groovyc --encoding utf-8 -d build src/main/groovy/dot/DotHi.groovy"
+  system './gradlew build'
 end
 
-task :try do
+task try: [:build] do
   exec "groovy -cp build/classes/groovy/main script/try-lib.groovy"
+  # or
+  #exec "groovy -cp build/libs/dot-groovy.jar script/try-lib.groovy"
 end
 
 namespace :higradle do

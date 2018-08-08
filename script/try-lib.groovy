@@ -5,5 +5,8 @@ println '==use local shared lib'
 import static Hi.hi
 hi 'geeks'
 
-//import static dot.groovy.DotHi.dotHi
-//dotHi 'geeks'
+import dot.DotHi
+DotHi.dotHi 'geeks'
+
+import static dot.DotHi.dotHi
+dotHi 'geeks'
