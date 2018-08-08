@@ -1,9 +1,9 @@
 package dot.groovy
 import java.util.Date
 
-class Base {
+class DotHi {
   static void dotHi(name){
-    println "hi ${name} from Base class"
+    println "hi ${name} from DotHi class"
     println "date: ${new Date()}" 
   }
 }
