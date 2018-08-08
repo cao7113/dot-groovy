@@ -4,9 +4,9 @@ task :build do
 end
 
 task try: [:build] do
-  exec "groovy -cp build/classes/groovy/main script/try-lib.groovy"
-  # or
-  #exec "groovy -cp build/libs/dot-groovy.jar script/try-lib.groovy"
+  exec "groovy -cp build/libs/dot-groovy.jar script/try-lib.groovy"
+  # todo what's code layer convention
+  #exec "groovy -cp build/classes/groovy/main script/try-lib.groovy"
 end
 
 namespace :higradle do
@@ -25,7 +25,7 @@ namespace :higradle do
     exec <<-Sh
       cd higradle
       #way1: gradle build
-      #prefer way2: using wrapper
+      #way2: gradlew: gradle wrapper (prefered)
       ./gradlew build
     Sh
   end

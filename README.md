@@ -1,5 +1,9 @@
-# hi groovy
+# Try groovy
 
-## TODO
+## Usage
 
-use Gradle
+rake tasks:
+
+```
+rake try
+```
